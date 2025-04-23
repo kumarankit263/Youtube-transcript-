@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Chat Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎥 YouTube Chat Assistant</h1>
+
+    <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL" />
+    <button onclick="uploadTranscript()">Upload</button>
+
+    <div id="status"></div>
+
+    <textarea id="userQuery" placeholder="Ask something..."></textarea>
+    <button onclick="askQuestion()">Ask</button>
+
+    <div id="answer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
