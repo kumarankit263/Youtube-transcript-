@@ -3,38 +3,6 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 require('dotenv').config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY_);
 
-
-
-// async function embedTexts(texts) {
-//     const embeddingModel = genAI.getGenerativeModel({
-//         model: 'models/text-embedding-004', // 768 dimensions
-//     });
-//     const result = await embeddingModel.embedContent({
-//         content: {
-//             parts: [{ text: texts }], // Required structure
-//         },
-//     });
-//     return result.embedding.values;
-// };
-
-
-// async function embedTexts(texts) {
-//     const embeddingModel = genAI.getGenerativeModel({
-//       model: 'models/text-embedding-004',
-//     });
-  
-//     try {
-//       const result = await embeddingModel.embedContent({
-//         content: Array.isArray(texts) ? texts.join(' ') : texts, // Flatten if array
-//       });
-//       return result.embedding.values;
-//     } catch (error) {
-//       console.error("❌ Gemini embed error:", error);
-//       throw new Error("Gemini embedding failed: " + error.message);
-//     }
-//   }
-
-
 async function embedTexts(texts) {
     const res = await axios.post(
         'https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents',
